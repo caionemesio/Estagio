@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+     Veloz Challenge
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,26 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Veloz Challenge</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="container">
+    <h2>Sort by:</h2>
+    <div class="buttons">
+      <button (click)="sortBy('id')">Id </button>
+      <button (click)="sortBy('price')">Price</button>
+      <button (click)="sortBy('type')">Type</button>
+    </div>
   </div>
+
+  <ion-card *ngFor="let pet of pets" >
+      <ion-card-header>
+        <ion-card-title>Pet: {{pet.type}}</ion-card-title>
+        <ion-card-subtitle>Id: {{pet.id}}</ion-card-subtitle>
+        <ion-card-subtitle>Price:R${{pet.price}}</ion-card-subtitle>
+      </ion-card-header>
+
+
+  </ion-card>
 </ion-content>
